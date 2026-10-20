@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q "$(ls *.zip | head -n1)" -d project
+      - run: unzip -q "$(ls *.zip | sort -V | tail -n1)" -d project
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
